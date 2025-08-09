@@ -13,7 +13,7 @@ class TambahDataController extends Controller
     public function index()
     {
         $datas = TambahData::all();
-        return view('welcome', compact('datas'));
+        return view('welcome',compact('datas'));
     }
 
     /**
@@ -30,10 +30,6 @@ class TambahDataController extends Controller
     public function store(Request $request)
     {
         $request->validate(['nama']);
-        //secure
-        if (!$request->secure()) {
-            return redirect()->secure($request->getRequestUri());
-        }
         TambahData::create($request->all());
         return redirect()->route('tambah.index');
     }
