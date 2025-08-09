@@ -29,7 +29,9 @@ class TambahDataController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['nama']);
+        $request->validate([
+            'nama' => 'required',
+        ]);
         TambahData::create($request->all());
         return redirect()->route('tambah.index');
     }
