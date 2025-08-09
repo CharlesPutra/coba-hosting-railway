@@ -32,6 +32,7 @@ class TambahDataController extends Controller
         $request->validate([
             'nama' => 'required',
         ]);
+        //cb
         TambahData::create($request->all());
         return redirect()->route('tambah.index');
     }
