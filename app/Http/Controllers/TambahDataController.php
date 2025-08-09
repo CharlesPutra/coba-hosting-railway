@@ -13,7 +13,7 @@ class TambahDataController extends Controller
     public function index()
     {
         $datas = TambahData::all();
-        return view('welcome',compact('datas'));
+        return view('hasil',compact('datas'));
     }
 
     /**
