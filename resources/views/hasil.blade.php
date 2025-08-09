@@ -7,12 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{ route('tambah.store') }}" method="POST">
-        @csrf
-        <label for="nama">Nama</label>
-        <input type="text" id="nama" name="nama">
-        <button type="submit">Kirim</button>
-    </form>
-   
+     @foreach ($datas as $data)
+        <h4>{{ $data->nama }}</h4>
+    @endforeach
 </body>
 </html>
