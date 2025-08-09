@@ -30,6 +30,7 @@ class TambahDataController extends Controller
     public function store(Request $request)
     {
         $request->validate(['nama']);
+        //secure
         if (!$request->secure()) {
             return redirect()->secure($request->getRequestUri());
         }
