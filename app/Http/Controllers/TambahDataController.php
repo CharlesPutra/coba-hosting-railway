@@ -30,10 +30,10 @@ class TambahDataController extends Controller
     public function store(Request $request)
     {
         $request->validate(['nama']);
-        TambahData::create($request->all());
         if (!$request->secure()) {
             return redirect()->secure($request->getRequestUri());
         }
+        TambahData::create($request->all());
         return redirect()->route('tambah.index');
     }
 
