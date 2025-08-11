@@ -26,7 +26,7 @@
                     <td>{{ $data->nama }}</td>
                     <td><a href="{{ route('tambah.edit', $data->id) }}">edit</a></td>
                     <td>
-                        <form action="{{ route('tambah.destroy', $data->id) }}">
+                        <form action="{{ route('tambah.destroy', $data->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit">Hapus</button>
