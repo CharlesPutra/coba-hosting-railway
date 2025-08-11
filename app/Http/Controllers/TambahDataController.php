@@ -74,7 +74,7 @@ class TambahDataController extends Controller
     public function destroy(string $id)
     {
         $hapus = TambahData::findOrFail($id);
-        dd($hapus);
+        // dd($hapus);
         $hapus->delete();
         return redirect()->route('tambah.index');
     }
