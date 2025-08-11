@@ -20,7 +20,6 @@
         </thead>
         <tbody>
             <tr>
-                <th scope="row">1</th>
                 @foreach ($datas as $index => $data)
                     <td>{{ $index + 1 }}</td>
                     <td>{{ $data->nama }}</td>
