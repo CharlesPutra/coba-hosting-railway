@@ -40,7 +40,7 @@ class TambahDataController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TambahData $tambahData)
+    public function show(string $id)
     {
         //
     }
@@ -48,24 +48,33 @@ class TambahDataController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TambahData $tambahData)
+    public function edit(string $id)
     {
-        //
+        $edit = TambahData::findOrFAil($id);
+        return view('edit',compact('edit'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, TambahData $tambahData)
+    public function update(Request $request, string $id)
     {
-        //
+        $update = TambahData::findOrFail($id);
+         $request->validate([
+            'nama' => 'required',
+        ]);
+        $update->update($request->all());
+        return redirect()->route('tambah.index');
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TambahData $tambahData)
+    public function destroy(string $id)
     {
-        //
+        $hapus = TambahData::findOrFail($id);
+        $hapus->delete();
+        return redirect()->route('tambah.index');
     }
 }
