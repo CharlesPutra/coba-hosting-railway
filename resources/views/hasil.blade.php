@@ -22,10 +22,10 @@
             <tr>
                 <th scope="row">1</th>
                 @foreach ($datas as $index => $data)
-                    <td>{{ $index + 1 }}
-                        {{ $data->nama }}
-                        <a href="{{ route('tambah.edit', $data->id) }}">edit</a>
-
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $data->nama }}</td>
+                    <td><a href="{{ route('tambah.edit', $data->id) }}">edit</a></td>
+                    <td>
                         <form action="{{ route('tambah.destroy', $data->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
